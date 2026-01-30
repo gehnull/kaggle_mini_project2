@@ -97,7 +97,7 @@
 - 학습 시간이 증가할수록 학습 방식에 따른 **성과 전환 기울기**가 달라지며,  
   online videos는 구별되는 패턴을 보임
 
-![Study Efficiency (Slope)](outputs/eda/study_efficiency_slope.png)
+![Study Efficiency (Slope)](outputs/feature_engineering/study_efficiency_slope.png)
 
 - **Low Engagement(Dead Zone) 집단**은 평균 점수가 크게 낮아  
   **우선 개입 대상**으로 해석 가능
