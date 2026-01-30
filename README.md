@@ -74,14 +74,48 @@
 
 (그 외 지표는 코드 참고)
 
+### 파생 지표 유효성 검증
+
+아래 그림은 원변수 대비 파생 지표가
+시험 성적과의 선형 연관성을 어떻게 개선했는지를 보여준다.
+
+![Correlation Improvement](outputs/feature_engineering/corr_improvement.png)
+
+- `effective_study_time`은 단순 학습 시간 대비
+  성적과의 상관이 더 강화됨
+- `sleep_efficiency` 역시 수면 시간을 단독으로 사용할 때보다
+  설명력이 증가
+- 이는 **의미 기반 파생 지표 설계가 타당했음을 정량적으로 뒷받침**한다
+
+
 ---
 
 ## 5) 핵심 결과 (Key Findings)
-- **학습 방식은 성적에 실질적으로 영향을 준다**(효과크기 기준)
+
+- **학습 방식은 성적에 실질적으로 영향을 준다** (효과크기 기준)
 - **온라인 영상 학습은 최고 성과 방식은 아니지만, self-study 대비 일관되게 높은 성과**
-- 학습 시간이 증가할수록 학습 방식에 따른 **성과 전환 기울기**가 달라지며, online videos는 구별되는 패턴을 보임
-- **Low Engagement(Dead Zone) 집단**은 평균 점수가 크게 낮아 **우선 개입 대상**으로 해석 가능
-- 성별/전공 효과는 통계적으로는 잡히더라도 **실무적으로 무시 가능한 수준**(효과크기 매우 작음)
+- 학습 시간이 증가할수록 학습 방식에 따른 **성과 전환 기울기**가 달라지며,  
+  online videos는 구별되는 패턴을 보임
+
+![Study Efficiency (Slope)](outputs/eda/study_efficiency_by_method.png)
+
+- **Low Engagement(Dead Zone) 집단**은 평균 점수가 크게 낮아  
+  **우선 개입 대상**으로 해석 가능
+
+![Dead Zone](outputs/risk_analysis/dead_zone.png)
+
+- 성별·전공 효과는 통계적으로는 유의하나  
+  **효과크기 기준 실무적으로 무시 가능한 수준**
+
+---
+
+### 모델 관점에서의 최종 검증
+
+아래 Feature Importance 결과는 본 프로젝트에서 설계한 파생 지표들이  
+모델 예측에서도 실제로 중요한 변수로 작동했음을 보여준다.
+
+![Feature Importance](outputs/modeling/feature_importance.png)
+
 
 ---
 
